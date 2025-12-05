@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaDev Solutions - Desarrollo de Software y Automatización QA</title>
+    <meta name="description" content="Empresa de desarrollo de software, automatización QA, DevOps y consultoría en transformación digital.">
+
+    <!-- Microsoft Clarity: puedes dejar este ID o cambiarlo por otro -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ufx62l2920");
+    </script>
+
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --secondary: #0ea5e9;
+            --bg: #0b1020;
+            --bg-alt: #111827;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --accent: #22c55e;
+            --danger: #f97373;
+            --radius: 14px;
+            --shadow-soft: 0 18px 45px rgba(15,23,42,0.55);
+            --max-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #020617 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* HEADER / NAV */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(14px);
+            background: linear-gradient(to bottom, rgba(15,23,42,0.95), rgba(15,23,42,0.82), transparent);
+            border-bottom: 1px solid rgba(148,163,184,0.2);
+        }
+
+        .nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            background: radial-gradient(circle at 20% 0, #38bdf8, #4f46e5 45%, #22c55e);
+            box-shadow: 0 0 20px rgba(56,189,248,0.5);
+        }
+
+        .logo-text-main {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .logo-text-sub {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.9rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            color: var(--muted);
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e5e7eb;
+            background: rgba(148,163,184,0.12);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .btn {
+            border-radius: 999px;
+            padding: 0.45rem 1.1rem;
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: transparent;
+            color: var(--text);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 10px 30px rgba(37,99,235,0.55);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 40px rgba(37,99,235,0.7);
+        }
+
+        .btn-outline {
+            border-color: rgba(148,163,184,0.4);
+            color: var(--muted);
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(148,163,184,0.9);
+            color: #e5e7eb;
+            background: rgba(15,23,42,0.8);
+        }
+
+        /* HERO */
+
+        .section {
+            padding: 3.5rem 1.5rem;
+        }
+
+        .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .hero {
+            padding-top: 2.5rem;
+            padding-bottom: 3rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.1rem, 3vw + 1.4rem, 3rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #38bdf8, #4f46e5, #22c55e);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--muted);
+            max-width: 32rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.97rem;
+        }
+
+        .hero-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(37,99,235,0.1);
+            border: 1px solid rgba(59,130,246,0.35);
+            font-size: 0.8rem;
+            color: #e5e7eb;
+            margin-bottom: 0.7rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.3rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-meta strong {
+            display: block;
+            color: #e5e7eb;
+            font-size: 1rem;
+        }
+
+        .hero-card {
+            border-radius: 24px;
+            background: radial-gradient(circle at 0 0, rgba(56,189,248,0.2), transparent 55%),
+                        radial-gradient(circle at 100% 0, rgba(99,102,241,0.18), transparent 55%),
+                        #020617;
+            padding: 1.8rem 1.6rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(148,163,184,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card-badge {
+            position: absolute;
+            top: 1.1rem;
+            right: 1.1rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(22,163,74,0.15);
+            border: 1px solid rgba(34,197,94,0.5);
+            font-size: 0.75rem;
+            color: #bbf7d0;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .stat {
+            padding: 0.7rem 0.8rem;
+            border-radius: 14px;
+            background: rgba(15,23,42,0.95);
+            border: 1px solid rgba(55,65,81,0.7);
+            font-size: 0.85rem;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.3rem;
+        }
+
+        .hero-timeline {
+            margin-top: 1.4rem;
+            border-radius: 18px;
+            background: rgba(15,23,42,0.95);
+            border: 1px dashed rgba(107,114,128,0.8);
+            padding: 0.9rem 0.95rem;
+            font-size: 0.82rem;
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 0, #22c55e, #16a34a);
+            box-shadow: 0 0 14px rgba(22,163,74,0.9);
+        }
+
+        /* GENERIC TITLES */
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+            max-width: 34rem;
+        }
+
+        .section-header {
+            margin-bottom: 1.8rem;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: radial-gradient(circle at 0 0, rgba(56,189,248,0.1), transparent 55%),
+                        radial-gradient(circle at 100% 0, rgba(34,197,94,0.1), transparent 55%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 1.1rem;
+        }
+
+        .service-card {
+            border-radius: var(--radius);
+            padding: 1.2rem 1.1rem;
+            background: rgba(15,23,42,0.97);
+            border: 1px solid rgba(55,65,81,0.9);
+            box-shadow: 0 14px 35px rgba(15,23,42,0.85);
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .service-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            padding: 0.18rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(30,64,175,0.65);
+            color: #dbeafe;
+        }
+
+        .service-title {
+            font-weight: 600;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 0.2rem;
+            display: grid;
+            gap: 0.18rem;
+        }
+
+        .service-list li::before {
+            content: "▹ ";
+            color: var(--secondary);
+        }
+
+        /* PROCESS */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+        }
+
+        .steps {
+            display: grid;
+            gap: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .step-card {
+            border-radius: 14px;
+            padding: 0.9rem 0.95rem;
+            background: rgba(15,23,42,0.96);
+            border: 1px solid rgba(55,65,81,0.9);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.7rem;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #4f46e5, #38bdf8);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .step-meta {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .process-aside {
+            border-radius: 18px;
+            padding: 1.3rem 1.2rem;
+            background: radial-gradient(circle at 0 0, rgba(56,189,248,0.2), transparent 60%),
+                        rgba(15,23,42,0.98);
+            border: 1px solid rgba(59,130,246,0.5);
+            box-shadow: var(--shadow-soft);
+            font-size: 0.9rem;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 0.6rem;
+        }
+
+        .tag {
+            border-radius: 999px;
+            padding: 0.15rem 0.6rem;
+            border: 1px solid rgba(148,163,184,0.5);
+            font-size: 0.74rem;
+            color: var(--muted);
+        }
+
+        /* TECH STACK */
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-top: 1.2rem;
+        }
+
+        .stack-card {
+            border-radius: 12px;
+            padding: 0.8rem 0.85rem;
+            background: rgba(15,23,42,0.96);
+            border: 1px solid rgba(75,85,99,0.9);
+            font-size: 0.82rem;
+        }
+
+        .stack-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        /* PORTFOLIO */
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            border-radius: var(--radius);
+            padding: 1rem;
+            background: rgba(15,23,42,0.97);
+            border: 1px solid rgba(55,65,81,0.9);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+        }
+
+        .project-badge {
+            font-size: 0.75rem;
+            border-radius: 999px;
+            padding: 0.16rem 0.55rem;
+            background: rgba(59,130,246,0.2);
+            color: #bfdbfe;
+            align-self: flex-start;
+        }
+
+        .project-title {
+            font-weight: 600;
+        }
+
+        .project-meta {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.4rem;
+        }
+
+        .project-tag {
+            font-size: 0.72rem;
+            padding: 0.1rem 0.45rem;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(75,85,99,0.9);
+        }
+
+        /* TESTIMONIALS */
+
+        .testimonials {
+            background: radial-gradient(circle at top, rgba(30,64,175,0.4), transparent 60%),
+                        #020617;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .testimonial {
+            border-radius: var(--radius);
+            padding: 1.1rem;
+            background: rgba(15,23,42,0.98);
+            border: 1px solid rgba(55,65,81,0.9);
+            box-shadow: 0 20px 40px rgba(15,23,42,0.9);
+            font-size: 0.86rem;
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .stars {
+            color: #fde68a;
+            font-size: 0.8rem;
+        }
+
+        /* FAQ */
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .faq-item {
+            border-radius: 12px;
+            margin-bottom: 0.6rem;
+            background: rgba(15,23,42,0.97);
+            border: 1px solid rgba(55,65,81,0.95);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 0.8rem 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .faq-question:hover {
+            background: rgba(31,41,55,0.9);
+        }
+
+        .faq-answer {
+            padding: 0.65rem 0.95rem 0.9rem;
+            font-size: 0.86rem;
+            color: var(--muted);
+            display: none;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+
+        /* PRICING */
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.1rem;
+        }
+
+        .plan {
+            border-radius: var(--radius);
+            padding: 1.2rem 1.1rem;
+            background: rgba(15,23,42,0.98);
+            border: 1px solid rgba(55,65,81,0.9);
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .plan.popular {
+            border-color: var(--secondary);
+            box-shadow: 0 18px 45px rgba(37,99,235,0.7);
+            position: relative;
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.8rem;
+            font-size: 0.72rem;
+            padding: 0.10rem 0.5rem;
+            border-radius: 999px;
+            background: rgba(56,189,248,0.2);
+            color: #e0f2fe;
+        }
+
+        .plan-name {
+            font-weight: 600;
+        }
+
+        .plan-price {
+            font-size: 1.5rem;
+        }
+
+        .plan-price span {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-left: 0.3rem;
+        }
+
+        .plan-list {
+            list-style: none;
+            display: grid;
+            gap: 0.25rem;
+            font-size: 0.84rem;
+        }
+
+        .plan-list li::before {
+            content: "✔ ";
+            color: var(--accent);
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+            gap: 2rem;
+        }
+
+        .contact-card {
+            border-radius: 18px;
+            padding: 1.3rem 1.2rem;
+            background: rgba(15,23,42,0.98);
+            border: 1px solid rgba(55,65,81,0.9);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 0.6rem;
+            font-size: 0.88rem;
+        }
+
+        .field {
+            display: grid;
+            gap: 0.2rem;
+        }
+
+        .field label {
+            font-size: 0.8rem;
+        }
+
+        input, textarea, select {
+            border-radius: 10px;
+            border: 1px solid rgba(55,65,81,0.9);
+            padding: 0.55rem 0.7rem;
+            background: rgba(15,23,42,0.97);
+            color: #e5e7eb;
+            font: inherit;
+            outline: none;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 1px rgba(56,189,248,0.4);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .contact-info dt {
+            font-weight: 600;
+            color: #e5e7eb;
+        }
+
+        .contact-info dd {
+            margin: 0 0 0.4rem;
+        }
+
+        /* FOOTER & MISC */
+
+        footer {
+            border-top: 1px solid rgba(31,41,55,0.95);
+            padding: 1.5rem 1.5rem 2rem;
+            margin-top: 2rem;
+            background: #020617;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+        }
+
+        .footer-links a:hover {
+            color: #e5e7eb;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 1.2rem;
+            bottom: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.6);
+            background: rgba(15,23,42,0.96);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: none;
+            z-index: 80;
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 960px) {
+            .hero-grid,
+            .process-grid,
+            .contact-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                order: -1;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid,
+            .portfolio-grid,
+            .testimonials-grid,
+            .pricing-grid,
+            .stack-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .services-grid,
+            .portfolio-grid,
+            .testimonials-grid,
+            .pricing-grid,
+            .stack-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="nav">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <div>
+                <div class="logo-text-main">NovaDev Solutions</div>
+                <div class="logo-text-sub">Software · QA · DevOps</div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#stack">Tecnologías</a>
+            <a href="#portfolio">Proyectos</a>
+            <a href="#precios">Planes</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <div class="nav-cta">
+            <button class="btn btn-outline" onclick="scrollToSection('portfolio')">Ver casos</button>
+            <button class="btn btn-primary" onclick="scrollToSection('contacto')">
+                Solicitar propuesta
+                <span>→</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="section hero" id="inicio">
+        <div class="section-inner hero-grid">
+            <div>
+                <div class="hero-eyebrow">Desarrollo de software & Automatización QA</div>
+                <div class="hero-highlight">
+                    <span>⚡ Entregas continuas · QA integrado · Métricas claras</span>
+                </div>
+                <h1 class="hero-title">
+                    Creamos productos digitales <span>robustos, medibles y listos para producción.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Acompañamos a equipos de desarrollo que necesitan entregar valor de negocio
+                    con ciclos cortos, pruebas automatizadas, observabilidad y una base técnica sólida.
+                    Nos integramos como un equipo de <strong>Product · Dev · QA · DevOps</strong> para
+                    reducir riesgos y acelerar lanzamientos.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="scrollToSection('contacto')">
+                        Reservar sesión de descubrimiento
+                    </button>
+                    <button class="btn btn-outline" onclick="scrollToSection('servicios')">
+                        Explorar servicios
+                    </button>
+                </div>
+                <div class="hero-meta">
+                    <div>
+                        <strong>+40</strong>
+                        Proyectos en producción
+                    </div>
+                    <div>
+                        <strong>98%</strong>
+                        Sprints cerrados con QA verde
+                    </div>
+                    <div>
+                        <strong>24/7</strong>
+                        Monitoreo y soporte avanzado
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-card">
+                <div class="hero-card-badge">Tablero en vivo · Métricas de calidad</div>
+                <h3>Panel de salud de producto</h3>
+                <p style="font-size:0.86rem; color:var(--muted); margin-top:0.45rem;">
+                    Visualizamos en un solo panel el estado real de tu plataforma:
+                    <strong>cobertura de pruebas, tiempos de respuesta, errores críticos,
+                    estabilidad de despliegues</strong> y percepción de usuario final.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>92%</strong>
+                        Reducción de defectos críticos antes de producción.
+                    </div>
+                    <div class="stat">
+                        <strong>-35%</strong>
+                        Menos tiempo invertido en pruebas manuales repetitivas.
+                    </div>
+                </div>
+
+                <div class="hero-timeline">
+                    <div class="timeline-step">
+                        <div class="step-dot"></div>
+                        <div>
+                            Kickoff técnico · entendemos tu arquitectura, riesgos y cuellos de botella.
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-dot" style="background:radial-gradient(circle at 30% 0,#38bdf8,#4f46e5); box-shadow:0 0 14px rgba(59,130,246,0.9);"></div>
+                        <div>
+                            Diseñamos una estrategia de pruebas, automatización y CI/CD alineada al negocio.
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-dot" style="background:radial-gradient(circle at 30% 0,#f97316,#ea580c); box-shadow:0 0 14px rgba(249,115,22,0.9);"></div>
+                        <div>
+                            Acompañamos la ejecución y medimos impacto con métricas reales, no solo “feeling”.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="servicios">
+        <div class="section-inner">
+            <header class="section-header">
+                <h2 class="section-title">Servicios que conectan código, calidad y negocio</h2>
+                <p class="section-subtitle">
+                    No solo escribimos código: diseñamos procesos, automatización y visibilidad para que
+                    cada release tenga una razón clara de existir y un impacto medible. Trabajamos sobre
+                    productos nuevos o plataformas que ya están en producción.
+                </p>
+            </header>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <span class="service-pill">🧩 Desarrollo de software a medida</span>
+                    <h3 class="service-title">Aplicaciones web modernas</h3>
+                    <p>
+                        Construimos aplicaciones mantenibles con arquitecturas limpias, APIs claras y
+                        frontends pensados para la experiencia de usuario.
+                    </p>
+                    <ul class="service-list">
+                        <li>Diseño de arquitectura basada en dominios (DDD ligero).</li>
+                        <li>APIs REST/GraphQL documentadas con OpenAPI/Swagger.</li>
+                        <li>Frontends SPA/SSR con React, Next.js o Blazor.</li>
+                        <li>Integraciones con servicios externos (pagos, correo, terceros).</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-pill" style="background:rgba(22,163,74,0.7); color:#bbf7d0;">✅ QA & Automatización</span>
+                    <h3 class="service-title">Automatización de pruebas end-to-end</h3>
+                    <p>
+                        Automatizamos los flujos críticos que sostienen tu negocio, priorizando
+                        estabilidad y mantenimiento antes que “cantidad de casos”.
+                    </p>
+                    <ul class="service-list">
+                        <li>Pruebas E2E con Playwright, Cypress o Selenium.</li>
+                        <li>Automatización de APIs y servicios internos.</li>
+                        <li>Pruebas de regresión guiadas por riesgo y métricas.</li>
+                        <li>Integración de la automatización en tu pipeline CI/CD.</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-pill" style="background:rgba(249,115,22,0.7); color:#ffedd5;">🚀 DevOps & Observabilidad</span>
+                    <h3 class="service-title">Entregas continuas y monitoreo</h3>
+                    <p>
+                        Configuramos pipelines, entornos reproducibles y tableros de observabilidad
+                        para entender lo que pasa en producción en tiempo real.
+                    </p>
+                    <ul class="service-list">
+                        <li>Pipelines en Azure DevOps, GitHub Actions o GitLab CI.</li>
+                        <li>Infraestructura como código (IaC) con Terraform/Bicep.</li>
+                        <li>Monitoreo con Application Insights, Prometheus, Grafana.</li>
+                        <li>Alertas inteligentes y dashboards digestibles para negocio.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="proceso">
+        <div class="section-inner process-grid">
+            <div>
+                <header class="section-header">
+                    <h2 class="section-title">Un proceso pensado para equipos ágiles reales</h2>
+                    <p class="section-subtitle">
+                        Puedes trabajar con nosotros por producto, por módulo o por equipo. Nuestro enfoque
+                        se adapta a tu contexto: Scrum, Kanban, marcos híbridos o equipos que están migrando
+                        desde modelos más tradicionales.
+                    </p>
+                </header>
+
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div>
+                            <div class="step-title">Descubrimiento de dominio y prioridades</div>
+                            <div class="step-meta">1–2 sesiones · involucramos a personas de negocio, tech y soporte.</div>
+                            <p>
+                                Mapeamos tus flujos críticos, reglas de negocio y riesgos actuales.
+                                No arrancamos escribiendo código, sino entendiendo dónde realmente
+                                tu producto crea o pierde valor.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div>
+                            <div class="step-title">Diseño de arquitectura y estrategia de pruebas</div>
+                            <div class="step-meta">1 sprint · propuesta técnica con impacto visible.</div>
+                            <p>
+                                Definimos capas, contratos de APIs, estrategia de pruebas
+                                (unitarias, integración, sistema y aceptación) y un plan
+                                de automatización escalable.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div>
+                            <div class="step-title">Ejecución iterativa con métricas y feedback</div>
+                            <div class="step-meta">Sprints continuos · foco en releases pequeños pero constantes.</div>
+                            <p>
+                                Entregamos incrementos funcionales, con pipelines activos y
+                                tableros de seguimiento. Cada sprint debe producir valor claro:
+                                código útil, deuda controlada o reducción de riesgo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <div>
+                            <div class="step-title">Transición, documentación viva y acompañamiento</div>
+                            <div class="step-meta">0.5–1 sprint · entregables listos para el día a día.</div>
+                            <p>
+                                Dejamos configurados los proyectos, pipelines, paneles y guías técnicas
+                                para que tu equipo pueda continuar sin fricción. Si lo necesitas,
+                                podemos permanecer como acompañamiento de QA/DevOps.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="process-aside">
+                <h3>¿Qué entregables concretos recibe tu equipo?</h3>
+                <p style="margin-top:0.4rem;">
+                    No solo recibes “código”: recibes activos que reducen dependencia de personas y
+                    aumentan la resiliencia del equipo.
+                </p>
+                <ul style="margin-top:0.6rem; font-size:0.86rem; color:var(--muted); padding-left:1.1rem;">
+                    <li>Repositorio bien estructurado (frontend, backend, infra, automatización).</li>
+                    <li>Guía de estándares de código, pruebas y revisión entre pares.</li>
+                    <li>Pipeline de CI/CD funcionando con builds, pruebas y despliegues automatizados.</li>
+                    <li>Tableros de observabilidad: errores, latencia, disponibilidad, métricas de negocio.</li>
+                    <li>Plan de pruebas y matrices de regresión priorizadas por riesgo y uso real.</li>
+                </ul>
+
+                <div class="tag-row">
+                    <span class="tag">Scrum / Kanban</span>
+                    <span class="tag">Playwright · Cypress</span>
+                    <span class="tag">.NET · Node · Python</span>
+                    <span class="tag">Azure · AWS</span>
+                    <span class="tag">SonarQube</span>
+                    <span class="tag">GitHub / Azure DevOps</span>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section" id="stack">
+        <div class="section-inner">
+            <header class="section-header">
+                <h2 class="section-title">Stack tecnológico que usamos en proyectos reales</h2>
+                <p class="section-subtitle">
+                    Elegimos tecnologías según tu contexto: mantenibilidad, equipo actual, presupuesto y
+                    horizonte del producto. No empujamos modas; buscamos equilibrio entre innovación y estabilidad.
+                </p>
+            </header>
+
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <div class="stack-title">Frontend</div>
+                    <p>React, Next.js, Vue, Angular, Blazor, SPA/SSR, Tailwind, Storybook.</p>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">Backend & APIs</div>
+                    <p>.NET, Node.js, Python, Java, microservicios ligeros, REST, GraphQL.</p>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">Bases de datos</div>
+                    <p>SQL Server, PostgreSQL, MySQL, MongoDB, Redis, diseño de esquemas y migraciones.</p>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">QA & Testing</div>
+                    <p>Playwright, Cypress, xUnit, MSTest, NUnit, Postman/Newman, contract testing.</p>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">DevOps & Cloud</div>
+                    <p>Azure, AWS, contenedores Docker, Kubernetes ligero, pipelines CI/CD, IaC.</p>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">Observabilidad</div>
+                    <p>Application Insights, OpenTelemetry, Grafana, Prometheus, logging estructurado.</p>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">Calidad de código</div>
+                    <p>SonarQube, revisiones entre pares, estándares de ramas y convenciones de commits.</p>
+                </div>
+                <div class="stack-card">
+                    <div class="stack-title">Herramientas colaborativas</div>
+                    <p>Azure Boards, Jira, GitHub Projects, documentación viva en Markdown/Confluence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+        <div class="section-inner">
+            <header class="section-header">
+                <h2 class="section-title">Proyectos que nos han retado de verdad</h2>
+                <p class="section-subtitle">
+                    Estos son ejemplos ficticios pero inspirados en situaciones reales que vemos en equipos
+                    de tecnología: sistemas heredados, integraciones complejas y equipos creciendo rápido.
+                </p>
+            </header>
+
+            <div class="portfolio-grid">
+                <article class="project-card">
+                    <span class="project-badge">Fintech · QA & DevOps</span>
+                    <h3 class="project-title">Plataforma de pagos con regresión controlada</h3>
+                    <p>
+                        Implementamos una suite de pruebas automatizadas sobre los flujos de pago, conciliación
+                        y reportes, integradas en pipelines que corren en cada commit hacia rama principal.
+                    </p>
+                    <p class="project-meta">
+                        Resultado: menos interrupciones nocturnas, releases más frecuentes y reducción de
+                        incidentes críticos en producción.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Playwright</span>
+                        <span class="project-tag">Azure DevOps</span>
+                        <span class="project-tag">APIs REST</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <span class="project-badge" style="background:rgba(16,185,129,0.3); color:#a7f3d0;">Sector público · Modernización</span>
+                    <h3 class="project-title">Renovación gradual de un sistema legado</h3>
+                    <p>
+                        Diseñamos una arquitectura por módulos, migrando funcionalidades críticas desde un
+                        monolito antiguo a servicios modernos, sin detener la operación diaria.
+                    </p>
+                    <p class="project-meta">
+                        Resultado: nuevas funcionalidades cada mes, manteniendo la estabilidad de los procesos
+                        administrativos existentes.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">.NET</span>
+                        <span class="project-tag">SQL Server</span>
+                        <span class="project-tag">Migraciones progresivas</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <span class="project-badge" style="background:rgba(245,158,11,0.35); color:#fffbeb;">E-commerce · Experiencia de usuario</span>
+                    <h3 class="project-title">Checkout rápido con métricas de experiencia</h3>
+                    <p>
+                        Unificamos la experiencia de compra, reduciendo pasos en el checkout y
+                        midiendo abandono, tiempos de carga y errores por dispositivo.
+                    </p>
+                    <p class="project-meta">
+                        Resultado: aumento de conversión, menos tickets de soporte y decisiones basadas
+                        en datos y no solo en hipótesis.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Next.js</span>
+                        <span class="project-tag">Analytics</span>
+                        <span class="project-tag">Pruebas A/B</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+        <div class="section-inner">
+            <header class="section-header">
+                <h2 class="section-title">Lo que dicen equipos con los que hemos trabajado</h2>
+                <p class="section-subtitle">
+                    Historias breves que muestran cómo una mezcla de buenas prácticas, comunicación clara
+                    y enfoque en calidad puede cambiar la forma en que un equipo entrega software.
+                </p>
+            </header>
+
+            <div class="testimonials-grid">
+                <article class="testimonial">
+                    <div class="testimonial-header">
+                        <div>
+                            <div class="testimonial-name">Carolina M.</div>
+                            <div class="testimonial-role">Líder de Producto · Fintech</div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p>
+                        “Pasamos de tener lanzamientos tensos a ver las releases como parte del flujo
+                        normal de trabajo. Los tableros y la automatización nos dieron confianza real
+                        para tomar decisiones.”
+                    </p>
+                </article>
+
+                <article class="testimonial">
+                    <div class="testimonial-header">
+                        <div>
+                            <div class="testimonial-name">Luis R.</div>
+                            <div class="testimonial-role">CTO · Startup logística</div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p>
+                        “El equipo de NovaDev nos ayudó a ordenar nuestro repositorio, pipelines y
+                        pruebas. Ahora onboarding de nuevos devs toma días, no semanas.”
+                    </p>
+                </article>
+
+                <article class="testimonial">
+                    <div class="testimonial-header">
+                        <div>
+                            <div class="testimonial-name">Andrea P.</div>
+                            <div class="testimonial-role">Gerente TI · Sector público</div>
+                        </div>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                    <p>
+                        “Lo que más valoramos fue la paciencia para explicar conceptos técnicos en un
+                        lenguaje entendible para el resto de la organización. Se notó el enfoque en
+                        acompañar, no solo ‘entregar y desaparecer’.”
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="precios">
+        <div class="section-inner">
+            <header class="section-header">
+                <h2 class="section-title">Formas de trabajo flexibles según tu contexto</h2>
+                <p class="section-subtitle">
+                    Estos planes son una guía. Podemos adaptar la dedicación, el foco y el alcance
+                    a la realidad de tu equipo, tamaño de producto y prioridades de negocio.
+                </p>
+            </header>
+
+            <div class="pricing-grid">
+                <article class="plan">
+                    <h3 class="plan-name">Plan Starter · Auditoría técnica</h3>
+                    <div class="plan-price">$1 200 <span>aprox · único</span></div>
+                    <p>Ideal para productos que ya están en producción y necesitan claridad técnica.</p>
+                    <ul class="plan-list">
+                        <li>Revisión de arquitectura y repositorios.</li>
+                        <li>Mapa de riesgos y deuda técnica priorizada.</li>
+                        <li>Recomendaciones para pruebas y CI/CD.</li>
+                        <li>Sesión de cierre con equipo completo.</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="scrollToSection('contacto')">
+                        Conversar sobre este plan
+                    </button>
+                </article>
+
+                <article class="plan popular">
+                    <span class="plan-badge">Más elegido</span>
+                    <h3 class="plan-name">Plan Sprint Team · Equipo extendido</h3>
+                    <div class="plan-price">$3 800 <span>aprox · mensual</span></div>
+                    <p>Nos integramos como un squad técnico que acompaña tus sprints de principio a fin.</p>
+                    <ul class="plan-list">
+                        <li>Equipo mixto de Dev + QA + DevOps.</li>
+                        <li>Automatización de flujos críticos priorizados.</li>
+                        <li>Pipelines de CI/CD activos y monitoreados.</li>
+                        <li>Revisión de métricas y roadmap cada mes.</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="scrollToSection('contacto')">
+                        Agendar llamada
+                    </button>
+                </article>
+
+                <article class="plan">
+                    <h3 class="plan-name">Plan Mentoring · Acompañamiento interno</h3>
+                    <div class="plan-price">$1 900 <span>aprox · mensual</span></div>
+                    <p>Si ya tienes equipo, pero necesitan guía para madurar prácticas de desarrollo y QA.</p>
+                    <ul class="plan-list">
+                        <li>Sesiones de mentoring técnico 1:1 y grupales.</li>
+                        <li>Revisión de código, flujos y tableros actuales.</li>
+                        <li>Soporte en diseño de pruebas y automatización.</li>
+                        <li>Material y guías para dejar capacidad instalada.</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="scrollToSection('contacto')">
+                        Ver si encaja con mi equipo
+                    </button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ + CONTACT -->
+    <section class="section" id="contacto">
+        <div class="section-inner faq-grid">
+            <div>
+                <header class="section-header">
+                    <h2 class="section-title">Preguntas frecuentes</h2>
+                    <p class="section-subtitle">
+                        Algunas de las preguntas que más recibimos cuando un equipo está considerando
+                        trabajar con nosotros por primera vez.
+                    </p>
+                </header>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Pueden integrarse con un equipo que ya usa Scrum o Kanban?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sí. Nos adaptamos a los rituales que ya tienes (dailies, plannings, reviews, retros)
+                        y proponemos ajustes solo donde generan valor. La idea no es imponer un marco nuevo,
+                        sino fortalecer el que ya funciona.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Trabajan solo con proyectos nuevos o también con sistemas heredados?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Trabajamos con ambos. En sistemas heredados solemos comenzar por entender qué
+                        módulos son más críticos para el negocio y qué tan fácil es probarlos y desplegarlos.
+                        Luego priorizamos intervenciones de alto impacto, evitando cambios masivos de golpe.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Podemos empezar solo con una evaluación antes de un compromiso largo?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Claro. El plan Starter está pensado justo para eso: obtener una radiografía técnica
+                        y de procesos, con recomendaciones accionables que puedes implementar con nosotros
+                        o con tu propio equipo.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿En qué países pueden trabajar?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nuestro trabajo es remoto, así que podemos colaborar con equipos de cualquier país,
+                        siempre que haya solapamiento horario razonable para las sesiones clave.
+                    </div>
+                </div>
+            </div>
+
+            <aside class="contact-card">
+                <h3>Hablemos de tu contexto</h3>
+                <p style="font-size:0.9rem; color:var(--muted); margin-top:0.4rem;">
+                    Cuéntanos brevemente sobre tu producto, equipo y qué te gustaría mejorar:
+                    velocidad, calidad, visibilidad, estabilidad… o todo junto.
+                </p>
+
+                <form class="contact-form" onsubmit="handleFakeSubmit(event)">
+                    <div class="field">
+                        <label for="nombre">Nombre y rol</label>
+                        <input id="nombre" type="text" placeholder="Ej: Ana López · Líder de Producto" required />
+                    </div>
+                    <div class="field">
+                        <label for="email">Correo de contacto</label>
+                        <input id="email" type="email" placeholder="nombre@empresa.com" required />
+                    </div>
+                    <div class="field">
+                        <label for="tipo">¿Qué te gustaría trabajar primero?</label>
+                        <select id="tipo">
+                            <option>Automatización de pruebas y QA</option>
+                            <option>Desarrollo de un nuevo módulo o producto</option>
+                            <option>Mejora de pipelines y DevOps</option>
+                            <option>Evaluación técnica y roadmap de modernización</option>
+                            <option>Mentoring para el equipo interno</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="mensaje">Cuéntanos un poco más</label>
+                        <textarea id="mensaje" placeholder="Describe tu contexto actual, desafíos y objetivos principales."></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">
+                        Enviar (simulado para demo)
+                    </button>
+                    <p id="form-msg" style="font-size:0.78rem; color:var(--muted);"></p>
+                </form>
+
+                <dl class="contact-info" style="margin-top:1.1rem;">
+                    <dt>Correo de referencia</dt>
+                    <dd>contacto@novadev-solutions.dev</dd>
+
+                    <dt>Horario de atención</dt>
+                    <dd>Lunes a viernes · 9:00–17:00 (UTC-6)</dd>
+
+                    <dt>Modalidad</dt>
+                    <dd>Remoto · Sesiones por videollamada · Seguimiento en herramientas colaborativas.</dd>
+                </dl>
+            </aside>
+        </div>
+    </section>
+</main>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+<footer>
+    <div class="footer-inner">
+        <div>© <span id="year"></span> NovaDev Solutions. Este sitio es una demo para propósitos educativos.</div>
+        <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#portfolio">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Scroll suave a secciones
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+            item.classList.toggle('open');
+            const icon = item.querySelector('.faq-toggle');
+            icon.textContent = item.classList.contains('open') ? '−' : '+';
+        });
+    });
+
+    // Botón volver arriba
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Año en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simulación de envío de formulario (solo para demo)
+    function handleFakeSubmit(e) {
+        e.preventDefault();
+        const msg = document.getElementById('form-msg');
+        msg.style.color = '#4ade80';
+        msg.textContent = '✅ Para efectos de demo, el formulario se considera enviado. Aquí podrías integrar tu backend real.';
+        setTimeout(() => msg.textContent = '', 6000);
+    }
+</script>
+</body>
+</html>
